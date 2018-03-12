@@ -7,6 +7,7 @@ class ServiceContainer {
     private $config;
     private $pdo;
     private $shipLoader;
+    private $shipStorage;
     private $battleManager;
 
     // Construct
@@ -40,11 +41,23 @@ class ServiceContainer {
      */
     public function getShipLoader() {
         if ( $this->shipLoader === null ) {
-            $this->shipLoader = new ShipLoader( $this->getPDO() );
+            $this->shipLoader = new ShipLoader( $this->getShipStorage() );
         }
 
         return $this->shipLoader;
     }
+
+	/**
+	 * @return AbstractShipStorage
+	 */
+	public function getShipStorage() {
+		if ( $this->shipStorage === null ) {
+			//$this->shipStorage = new PdoShipStorage( $this->getPDO() );
+			$this->shipStorage = new JsonFileShipStorage(__DIR__ . '/../../resources/ships.json');
+		}
+
+		return $this->shipStorage;
+	}
 
     public function getBattleManager() {
         if ( $this->battleManager === null ) {

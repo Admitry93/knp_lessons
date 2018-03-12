@@ -10,7 +10,7 @@ class BattleResult {
 
     // Constructor
 
-    public function __construct( $ujp, Ship $ws = null, Ship $ls = null ) {
+    public function __construct( $ujp, AbstractShip $ws = null, AbstractShip $ls = null ) {
         $this->winningShip = $ujp;
         $this->losingShip = $ls;
         $this->winningShip = $ws;

@@ -8,6 +8,9 @@ $ships = $shipLoader->getShips();
 
 //dbg($ships);die;
 
+$brShip = new BrokenShip('Broken');
+$ships[] = $brShip;
+
 $errorMessage = '';
 if (isset($_GET['error'])) {
     switch ($_GET['error']) {

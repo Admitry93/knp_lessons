@@ -1,6 +1,7 @@
 <?php
 
 abstract class AbstractShip {
+
     // Properties
 
     private $name;
@@ -81,6 +82,10 @@ abstract class AbstractShip {
     }
 
     // Methods
+
+	abstract public function getJediFactor();
+    abstract public function getType();
+    abstract public function isFunctional();
 
     public function getNameAndSpecs( $useLongFormat = false ) {
         if ( $useLongFormat ) {

@@ -1,9 +1,13 @@
 <?php
 
+ini_set('error_reporting', E_ALL);
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+
 $configuration = array(
-    'db_dsn'  => 'mysql:host=localhost;dbname=oo_battle',
-    'db_user' => 'root',
-    'db_pass' => null,
+	'db_dsn' => 'mysql:host=localhost;dbname=dalferwj_phples',
+	'db_user' => 'dalferwj_phples',
+	'db_pass' => 'vbcrfkby'
 );
 
 require_once __DIR__.'/lib/Service/Container.php';

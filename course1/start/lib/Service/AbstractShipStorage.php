@@ -1,10 +1,10 @@
 <?php
 
-abstract class AbstractShipStorage {
+interface ShipStorageInterface {
 
 	// Methods
 
-	abstract public function fetchAllShipsData();
-	abstract public function fetchSingleShipData($id);
+	public function fetchAllShipsData();
+	public function fetchSingleShipData($id);
 
 }

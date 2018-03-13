@@ -56,7 +56,7 @@ if (isset($_GET['error'])) {
     <body>
         <div class="container">
             <div class="page-header">
-                <h1>OO Battleships of Space</h1>
+                <h1>OO Battleships of Space Course 4</h1>
             </div>
             <table class="table table-hover">
                 <caption><i class="fa fa-rocket"></i> These ships are ready for their next Mission</caption>
@@ -115,6 +115,15 @@ if (isset($_GET['error'])) {
                                 <?php endif; ?>
                             <?php endforeach; ?>
                         </select>
+                        <br>
+                        <div class="text-center">
+                            <label for="battle_type">Battle Type</label>
+                            <select name="battle_type" id="battle_type" class="form-control drp-dwn-width center-block">
+                                <option value="<?php echo BattleManager::TYPE_NORMAL ?>">Normal</option>
+                                <option value="<?php echo BattleManager::TYPE_NO_JEDI ?>">No Jedi Powers</option>
+                                <option value="<?php echo BattleManager::TYPE_ONLY_JEDI ?>">Only Jedi Powers</option>
+                            </select>
+                        </div>
                         <br>
                         <button class="btn btn-md btn-danger center-block" type="submit">Engage</button>
                     </form>

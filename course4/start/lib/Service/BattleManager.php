@@ -1,5 +1,10 @@
 <?php
 
+namespace Service;
+
+use Model\AbstractShip;
+use Model\BattleResult;
+
 class BattleManager
 {
 
@@ -8,6 +13,8 @@ class BattleManager
 	const TYPE_NORMAL = 'normal';
 	const TYPE_NO_JEDI = 'no_jedi';
 	const TYPE_ONLY_JEDI = 'only_jedi';
+
+	// Methods
 
     /**
      * Our complex fighting algorithm!
@@ -78,5 +85,13 @@ class BattleManager
         $jediHeroProbability = $ship->getJediFactor() / 100;
 
         return mt_rand(1, 100) <= ($jediHeroProbability*100);
+    }
+
+    public static function getBattleTypesDescr() {
+    	return array(
+    		self::TYPE_NORMAL => 'Normal',
+		    self::TYPE_NO_JEDI => 'No Jedi Powers',
+		    self::TYPE_ONLY_JEDI => 'Only Jedi Powers'
+	    );
     }
 }

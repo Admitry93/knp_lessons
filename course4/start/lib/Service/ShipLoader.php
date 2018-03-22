@@ -1,5 +1,9 @@
 <?php
 
+namespace Service;
+
+use Model\AbstractShip;
+
 class ShipLoader
 {
     private $shipStorage;
@@ -39,9 +43,9 @@ class ShipLoader
     private function createShipFromData(array $shipData)
     {
         if ($shipData['team'] == 'rebel') {
-            $ship = new RebelShip($shipData['name']);
+            $ship = new \Model\RebelShip($shipData['name']);
         } else {
-            $ship = new Ship($shipData['name']);
+            $ship = new \Model\Ship($shipData['name']);
             $ship->setJediFactor($shipData['jedi_factor']);
         }
 

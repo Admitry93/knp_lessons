@@ -19,7 +19,7 @@ $errorMessage = '';
 if (isset($_GET['error'])) {
     switch ($_GET['error']) {
         case 'missing_data':
-            $errorMessage = 'Don\'t forget to select some ships to battle!';
+            $errorMessage = 'Don\'t forget to selec some ships to battle!';
             break;
         case 'bad_ships':
             $errorMessage = 'You\'re trying to fight with a ship that\'s unknown to the galaxy?';

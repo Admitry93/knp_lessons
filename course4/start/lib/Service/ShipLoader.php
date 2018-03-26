@@ -20,7 +20,12 @@ class ShipLoader
     {
         $ships = array();
 
-        $shipsData = $this->queryForShips();
+        try {
+	        $shipsData = $this->queryForShips();
+        } catch ( \PDOException $e ) {
+        	trigger_error( 'Exception' . $e->getMessage() );
+        	$shipsData = [];
+        }
 
         foreach ($shipsData as $shipData) {
             $ships[] = $this->createShipFromData($shipData);

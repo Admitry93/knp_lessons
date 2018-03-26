@@ -12,7 +12,7 @@ abstract class AbstractShip
 
     private $strength = 0;
 
-    /**
+	/**
      * @return integer
      */
     abstract public function getJediFactor();
@@ -120,5 +120,9 @@ abstract class AbstractShip
     public function setId($id)
     {
         $this->id = $id;
+    }
+
+    public function __toString() {
+    	return $this->getName();
     }
 }
